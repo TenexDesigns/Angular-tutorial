@@ -155,16 +155,46 @@
  *                   How ever if we use property binding ,we can change the diable property  in the class  or inline                                                                                              
  *                      We CAN NOT  use interpolation e.g <input disabled ={{isDisabled}}><input/>    
  *                        This is because interpolation works only for string values
- *                         In the above exaple disabled takes in boolean values.There for interpolation wont work for it                                                                                      
+ *                         In the above exaple disabled takes in boolean values.There for interpolation wont work for it        
+*
+*                            
+*
+*
+*                       <<<<<<<*********************** CLASS BINDING ***************** >>>>>>>>>>>>>
+
+**               Classese are made in the style of the component
+
+
+                   e.g      i.e  
+ *          @Component(
+ *                 selector:'courses',                        //This 'courses'  .We add it as a custom html component
+ *                 template:"<h2>Courses</h2>"  
+                   style:[`
+                        .class-red{ color:red;
+                                    background-color:green;
+                                   }
+                        .color-green{
+                                   color:green;
+                                   }
+                        .color-green{
+                                   color:red;
+                                   }
+                        .itallic{
+                                   text-decolation:ittalic;
+                                   }
+                        
+                        `]
+ *                    )
+ *              export class Torchcomponent{}
  * 
  * 
  *                   ****** Note normal class and property bound class .If used together ,The property bound class gets excuted as it has moore ponts
- *                      <h1 class="color green"  [class]="color red">           The property bound class is excuted  i,e color red
+ *                      <h1 class="color-green"  [class]="color-red">           The property bound class is excuted  i,e color-red
  * 
  *                   ****** Note .To condictionaly render a class based on  an expression of true or false
  *                         use class binding dot the desired class to be rendred contionaly  and equet it to the true or false epression
- *                                  <h1 [class.colorred]= "true">          If the expression is true ,the class is excuted ,if it is not true ,the class is not excuted                     
- *                        or        < h1 [class.colorred]= "hasColor">
+ *                                  <h1 [class.color-red]= "true">          If the expression is true ,the class is excuted ,if it is not true ,the class is not excuted                     
+ *                        or        < h1 [class.color-red]= "hasColor">
  *                                      export class Torchcomponent{
  *                                                     hasColor:true
  *                                                                }
